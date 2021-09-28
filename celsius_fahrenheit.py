@@ -1,4 +1,4 @@
-# Solicita al usuario ña temperatura en grados Celsius
+# Solicita al usuario la temperatura en grados Celsius
 # Convierte la temperatura en grados Fahrentheit
 # Imprime la temperatura conversa
 
@@ -12,7 +12,7 @@ print("""
 	2- Convertidor de Fahrenheit a Celsius
 	""")
 
-# Cachamos un error si el usuario digita str por algún motivo
+# Cachamos un error si el usuario digita un str por algún motivo
 try:
 	convert = int(input("Digita el numero de la conversion a realizar: ")) # Preguntamos la conversion a realizar
 	print()
