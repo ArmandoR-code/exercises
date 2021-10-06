@@ -18,19 +18,17 @@ try:
 	print()
 	
 	if convert == 1:
-		temp_cels = int(input("Digita la temperatura en grados Celsius: ")) # Preguntamos la temperatura en int
+		temp_cels = float(input("Digita la temperatura en grados Celsius: ")) # Preguntamos la temperatura en int
 
-		temp_fahr_float = (temp_cels * x) + n
-		temp_fahr = int(temp_fahr_float) # Convertimos el resultado de float a int
-
+		temp_fahr = (temp_cels * x) + n
+		
 		print()
 		print(f"La temperatura de {temp_cels}°C, es igual a {temp_fahr}°F") # Imprimimos la conversion
 
 	elif convert == 2:
-		temp_fahr = int(input("Digita la temperatura en grados Fahrenheit: ")) 
+		temp_fahr = float(input("Digita la temperatura en grados Fahrenheit: ")) 
 
-		temp_cels_float = (temp_fahr - n) / x
-		temp_cels = int(temp_cels_float) 
+		temp_cels = (temp_fahr - n) / x
 
 		print()
 		print(f"La temperatura de {temp_fahr}°F, es igual a {temp_cels}°C")
