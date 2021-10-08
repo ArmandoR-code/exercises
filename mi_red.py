@@ -89,9 +89,68 @@ print("-" * 100)
 print("Gracias por la información. Esperamos que disfrutes con Mi Red")
 print()
 
-#Finalmente, solicitamos un mensaje de prueba que sirva para publicar un estado del usuario.
-mensaje = input("Ahora vamos a publicar tu primer mensaje. ¿Qué piensas hoy? ")
+#Usaremos una variable bool para indicar si el usuario desea continuar utilizando el programa o no
+continue_ = True
+
+#Creamos una clase para almacenar las publicaciones del usuario
+class Board():
+        """Clase para almacenar y editar los mensajes del usuario """
+        def __init__(self):
+            self.msg_usr = []
+        #Guardamos un mensaje
+        def pull_in(self, msg):
+            self.msg_usr.append(msg)
+        #Borramos el último mensaje escrito   
+        def pull_out(self):
+            return self.msg_usr.pop()
+        def all_msg(self):
+            return self.msg_usr
+all_msg_usr = Board()
+
+#Este ciclo se ejecuta hasta que el usuario desee salir
+while continue_:
+    #Preguntamos al usuario si desea escribir un mensaje
+    post_msg = str(input("Escribir mensaje: S/N "))
+    
+    #Vamos a aceptar que el usuario ingrese un mensaje cuando escriban "S", "s", o nada
+    if post_msg == "S" or post_msg == "s":
+        msg_usr = Board()
+        msg_usr.pull_in(input("¿En qué estas pensando? "))
+        print()
+        print("*" * 100)
+        print(name, "dice:", msg_usr.all_msg())
+        print("*" * 100)
+    # Si la respuesta es negativa terminamos el ciclo
+    elif post_msg == "N" or post_msg == "n":   
+        delete = str(input("Borrar último mensaje enviado: S/N "))
+        if delete == 'S' or delete == 's':
+            msg_usr.pull_out()
+        elif delete =='N' or delete == 'n':
+            all_ = str(input("Ver mensajes publicados: S/N "))
+            if all_ == 'S' or all_ == 's':
+                print(all_msg_usr.all_msg())
+            elif all_ == 'N' or all_ == 'n':                
+                continue_ = False            
 print()
-print("*" * 100)
-print(name, "dice:", mensaje)
-print("*" * 100)
+
+change_name = True
+
+while change_name:
+    change = str(input("¿Quieres cambiar tu nombre de usuario? S/N "))
+    
+    if change == "S" or change == "s":
+        print()
+        print("Vamos a cambiar tu nombre!!")
+        print()
+        new = str(input("Escribe tu nuevo nombre: "))
+        name = new
+        print()
+        print("Este es tu nuevo nombre: ", new)
+    
+    elif change == "N" or change == "n":
+        change_name = False
+print()
+#Mensaje de salida, una vez que el ciclo ha terminado.
+print("Gracias por usar Mi Red. ¡Hasta pronto!")                      
+    
+  
