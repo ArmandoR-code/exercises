@@ -1,8 +1,8 @@
 print()
-print("¡Tablas de multiplicar!")
+print("Â¡Tablas de multiplicar!")
 print()
 
-num  = int(input("¿Cual tabla de multiplicar quieres? "))
+num  = int(input("Â¿Cual tabla de multiplicar quieres? "))
 
 print()
 print("La tabla del", num, "es: ")
