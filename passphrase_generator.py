@@ -12,4 +12,6 @@ from xkcdpass import xkcd_password as xp
 
 words = xp.generate_wordlist(min_length=5, max_length=8)
 
-print(xp.generate_xkcdpassword(words, numwords=4))
+passphrase = xp.generate_xkcdpassword(words, numwords=4)
+
+print('New passphrase: ', passphrase)
