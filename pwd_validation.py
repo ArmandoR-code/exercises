@@ -11,17 +11,18 @@ from string import punctuation
 
 print(
 """
-Validation rules:
-    No spaces
-    Lenght between 8 and 16 characters
-    At least 1 special character
-    Al least 1 number
-    At least 1 uppercase
+The nex sules validates if your password is good enough:
+    - No spaces
+    - Lenght between 8 and 16 characters
+    - At least 1 special character
+    - Al least 1 number
+    - At least 1 uppercase
 """
 )
 print()
 
 def main(pwd):
+    """ Main function: Validates whether the password meets a set of rules to make it strong. """
     # No spaces
     if " " in pwd:
         return "The password must not have spaces"
@@ -39,15 +40,13 @@ def main(pwd):
     # 1 uppercase
     capital = any(x.isupper() for x in pwd)
     if not capital:
-        return "The password must have 1 uppercase"
+        return "The password must have at least 1 uppercase"
     
-    return f"Your password: {pwd} passed the validation test"
+    return f"Validation password test approved!\n You can use this password to sign in"
 
-pwd = getpass.getpass("Enter your password: ")
+pwd = getpass.getpass("Enter the password: ")
 
 print(main(pwd))
 
 if __name__ == "__main__":
     main(pwd)
-
-# Make unit testing
