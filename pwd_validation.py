@@ -11,9 +11,9 @@ from string import punctuation
 
 print(
 """
-The nex sules validates if your password is good enough:
+The nex rules validates if your password is good enough:
     - No spaces
-    - Lenght between 8 and 16 characters
+    - Length between 8 and 16 characters
     - At least 1 special character
     - Al least 1 number
     - At least 1 uppercase
@@ -26,7 +26,7 @@ def main(pwd):
     # No spaces
     if " " in pwd:
         return "The password must not have spaces"
-    # Lenght b/w 8 and 16 characters
+    # Length b/w 8 and 16 characters
     if len(pwd) not in range(8, 17):
         return "The password must be between 8 and 16 characters"
     # 1 special character
