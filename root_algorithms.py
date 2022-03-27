@@ -12,7 +12,7 @@ print("""
         2- Aproximación de soluciones
         3- Búsqueda binaria
         
-        \x1B[3mEscribe q para salir\x1B[0m
+        \x1B[3mEscribe 0 para salir\x1B[0m
   """)
 
 def usr_num():
@@ -65,20 +65,27 @@ def binaria(usr_num):
     print(f"La raiz cuadrada de {usr_num} es {root}")
 
 while True:
-    option = int(input("Opción: "))
-    print()
+    try:
+        option = int(input("Algoritmo: "))
+        print()
+
+        if option == 1:
+            print("Enumeración",)
+            enumeracion(usr_num())
+        elif option == 2:
+            print("Aproximación")
+            aproximacion(usr_num())
+        elif option == 3:
+            print("Búsqueda binaria")
+            binaria(usr_num())
+        elif option > 3 :
+            print("\033[1m!Elige una de las 3 opciones ateriores!\033[0m")
+        elif option == 0:
+            print("\033[1m!Hasta la próxima!\033[0m")
+            break 
     
-    if option == 1:
-        print("Enumeración",)
-        enumeracion(usr_num())
-    elif option == 2:
-        print("Aproximación")
-        aproximacion(usr_num())
-    elif option == 3:
-        print("Búsqueda binaria")
-        binaria(usr_num())
-    elif option > 3 :
-        print("\033[1m!Elige una de las 3 opciones ateriores!\033[0m")
-    elif option == "q" or "Q": # Coregir ValueError
-        break
-        
+    except ValueError:
+        print("\033[1m!Elige el valor numérico de la opción!\033[0m")
+        print()
+    
+    
